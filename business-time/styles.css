@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body {
+    font-family: 'Times New Roman', Times, serif;
+}
+html {
+    overflow-x: hidden;
+}
+body {
+    background: fixed linear-gradient(90deg, rgb(180, 100, 20), rgb(68, 70, 72))
+}
+header {
+    position:relative;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+    background: fixed rgba(0, 0, 0, 1);
+    color: steelblue;
+    font-variant: small-caps;
+    margin: 0;
+}
+.navbar {
+    position:sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 10px 32px;
+    width: 100%;
+    letter-spacing: 1px;
+    background:rgba(0, 0, 0, 9);
+    transition: all 0.5s ease-out;
+}
+@media screen and (max-width: 800px) {
+    .navbar {
+        position:sticky;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        padding: 10px 32px;
+        width: 100%;
+        letter-spacing: 1px;
+        background:rgba(0, 0, 0, 9);
+        transition: all 0.5s ease-out;
+    }
+}
+.button {
+    color: white;
+    padding: 10px 32px;
+    margin: 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: 0 2px 2px 0 solid white;
+  }
+.button:hover {
+    background-color: steelblue;
+    color: white;
+    
+}
+.floating-container {
+    position: relative;
+    display: block;
+    padding: 50px;
+    background-color: white;
+    margin: 1em 3em 0;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 3), 0 32px 64px 0 rgba(0, 0, 0, 2)
+}
+.eye-grab {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 1em;
+}
+.catch-phrase {
+    margin: 2em;
+    text-align: center;
+}
+.example {
+    margin: 2em;
+    text-align: center;
+}
+.about-header {
+    margin: 2em;
+    text-align: center;
+}
+hr {
+    margin: 1em;
+}
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1em;
+    width: 100%
+  }
+.img-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 1em;
+}
+  .img-column img {
+    margin-top: 2em;
+    vertical-align: middle;
+    width: 100%;
+}
+@media screen and (max-width: 800px) {
+    .img-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+} 
