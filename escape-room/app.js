@@ -1,6 +1,6 @@
-let gameOver = false;
-let keyFound = false;
-let doorOpen = false;
+let isGameOver = null;
+let isKeyFound = null;
+let isDoorOpen = null;
 
 const rl = require("readline-sync");
 const name = rl.question("What is your name? ");
@@ -10,28 +10,28 @@ const name = rl.question("What is your name? ");
 function escapeRoom() {
     console.log("Choices: ",'\n',"1. Open the door.",'\n',"2. Search the hole by the door.",'\n',"3. Search the room.");
     
-    let answer = rl.question("What do you do? (Choose by number):");
+    const answer = rl.question("What do you do? (Choose by number):");
 
-    if (answer = "1") {
-        if (keyFound === true){
-            doorOpen = true;
+    if (answer === "1") {
+        if (isKeyFound === true){
+            isDoorOpen = true;
             console.log("You open the door and escape. Good game.");
         } else {
             console.log("The door is locked.");
             escapeRoom();
         }
-    } else if (answer = "2") {
-        gameOver = true;
+    } else if (answer === "2") {
+        isGameOver = true;
         console.log("While examining the hole, you stick your hand inside. Something sharp separates your hand from your body and you pass out from shock",'\n',"You have bled out and died.");
         gameReset();
-    } else if (answer = "3") {
-        let luck = Math.random() < 0.5;
+    } else if (answer === "3") {
+        const luck = Math.random() < 0.5;
             if (luck <= 0.5) {
-                let keyFound = false;
+                isKeyFound = false;
                 console.log("You search for hours with no luck.");
                 escapeRoom();
             } else if (luck >= 0.5) {
-                let keyFound = true;
+                isKeyFound = true;
                 console.log("You found the key! Even though it took the whole day...")
                 escapeRoom();
             }
@@ -40,9 +40,9 @@ function escapeRoom() {
 function gameReset() {
     let rAnswer = rl.question("Try again?");
         if (rAnswer === "yes") {
-            gameOver = false;
-            keyFound = false;
-            doorOpen = false;
+            isGameOver = false;
+            isKeyFound = false;
+            isDoorOpen = false;
             escapeRoom();
         } else {
             console.log("Bye, then!")  
