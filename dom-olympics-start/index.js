@@ -15,8 +15,9 @@ const funBtn = document.getElementById("fun-button")
 const msgForm = document.getElementById("message-line");
 const msg = document.getElementsByClassName("message");
 const msgs = document.querySelector(".messages");
-    
-
+const themes = document.getElementById("theme-drop-down");
+const lMessage = document.getElementsByClassName("left");
+const rMessage = document.getElementsByClassName("right");
 
 h1.classList.add("header");
 h1.textContent = "JavaScript Made This!!";
@@ -46,3 +47,18 @@ clrBtn.addEventListener('click', () => {
     msgs.innerHTML = "";
 });
 
+themes.addEventListener('click', () => {
+    if (themes.value == "theme-one") {
+        lMessage.style.backgroundColor = "burlywood";
+        lMessage.style.color = "black";
+        rMessage.style.backgroundColor = "lightblue";
+        rMessage.style.color = "black";
+    } else if (themes.value == "theme-two") {
+        lMessage.style.backgroundColor = "black";
+        lMessage.style.color = "white";
+        rMessage.style.backgroundColor = "red";
+        rMessage.style.color = "white";
+    }
+});
+
+console.log(themes.value)
