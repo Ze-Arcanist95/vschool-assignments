@@ -18,6 +18,7 @@ const msgs = document.querySelector(".messages");
 const themes = document.getElementById("theme-drop-down");
 const lMessage = document.querySelectorAll(".left");
 const rMessage = document.querySelectorAll(".right");
+const text = document.querySelector("#input");
 
 h1.classList.add("header");
 h1.textContent = "JavaScript Made This!!";
@@ -67,4 +68,23 @@ themes.addEventListener('click', () => {
             rMessage[i].style.color = "white";
         }
     }
+});
+
+msgForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let bubble = document.createElement("div");
+
+    bubble.textContent = text.value;
+    bubble.classList.add("message");
+    if(msgs.lastElementChild == null) {
+        bubble.classList.add("right");
+    } else if (msgs.lastElementChild.getAttribute("class") == "message right") {
+        bubble.classList.add("left");
+    } else {
+        bubble.classList.add("right");
+    }
+
+    msgs.appendChild(bubble);
+    text.value = "";
 });
