@@ -12,12 +12,13 @@
 
     </header>
     <label>Theme</label>
-    <select id="theme-drop-down">
+    <select id="theme-drop-down" tabindex="5">
         <option value="theme-one">blue/brown</option>
         <option value="theme-two">red/black</option>
     </select>
     <div id="main">
-        <button id='clear-button'>clear</button>
+        <button id="clear-button" tabindex="3">clear</button>
+        <button id="fun-button" tabindex="4">cheers</button>
         <div class="messages">
             <div class="message left">
                 I have something serious to talk about
@@ -32,9 +33,9 @@
                 I'm just a simple farmer
             </div>
         </div>
-        <form name="message">
-            <input id="input" value="" autofocus/>
-            <button id="send-button">Send</button>
+        <form id="message-line" name="message">
+            <input id="input" value="" autofocus tabindex="1"/>
+            <button id="send-button" tabindex="2">Send</button>
         </form>
     </div>
    
