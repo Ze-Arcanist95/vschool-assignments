@@ -49,14 +49,22 @@ clrBtn.addEventListener('click', () => {
 
 themes.addEventListener('click', () => {
     if (themes.value == "theme-one") {
-            lMessage.style.backgroundColor = "burlywood";
-            lMessage.style.color = "black";
-            rMessage.style.backgroundColor = "lightblue";
-            rMessage.style.color = "black";
+        for (i = 0; i < lMessage.length; i++) {
+            lMessage[i].style.backgroundColor = "burlywood";
+            lMessage[i].style.color = "black";
+        }
+        for (i = 0; i < rMessage.length; i++) {
+            rMessage[i].style.backgroundColor = "lightblue";
+            rMessage[i].style.color = "black";
+        }
     } else if (themes.value == "theme-two") {
-            lMessage.style.backgroundColor = "black";
-            lMessage.style.color = "white";
-            rMessage.style.backgroundColor = "red";
-            rMessage.style.color = "white";
+        for (i = 0; i < lMessage.length; i++) {
+            lMessage[i].style.backgroundColor = "black";
+            lMessage[i].style.color = "white";
+        }
+        for (i = 0; i < rMessage.length; i++) {
+            rMessage[i].style.backgroundColor = "red";
+            rMessage[i].style.color = "white";
+        }
     }
 });
