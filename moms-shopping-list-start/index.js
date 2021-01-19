@@ -28,15 +28,15 @@ form.addEventListener("submit", (e) => {
     });
 
     editBtn.addEventListener("click", (e) => {
-        editInput.value = itemName.textContent;
-        editBtn.textContent = "Save";
+        if(e.target.textContent == "Edit"){
+            editInput.value = itemName.textContent;
+            editBtn.textContent = "Save";
         
-        listItem.prepend(editInput);
-
-        editBtn.addEventListener("click", (e) => {
-            itemName.textContent = editInput;
+            listItem.prepend(editInput);
+        } else if(e.target.textContent == "Save") {
+            itemName.textContent = editInput.value;
             editBtn.textContent = "Edit";
             editInput.remove;
-        })
+        }
     })
 });
