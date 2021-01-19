@@ -26,10 +26,4 @@ form.addEventListener("submit", (e) => {
         e.target.parentNode.remove();
     });
 
-    editBtn.addEventListener("click", (e) => {
-        const inputEdit = document.createElement("input");
-        const saveBtn = document.createElement("button");
-        
-    
-    });
 });
