@@ -31,6 +31,12 @@ form.addEventListener("submit", (e) => {
         editInput.value = itemName.textContent;
         editBtn.textContent = "Save";
         
-        listItem.append(editInput);
+        listItem.prepend(editInput);
+
+        editBtn.addEventListener("click", (e) => {
+            itemName.textContent = editInput;
+            editBtn.textContent = "Edit";
+            editInput.remove;
+        })
     })
 });
