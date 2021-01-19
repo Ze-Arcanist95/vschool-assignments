@@ -28,15 +28,16 @@ form.addEventListener("submit", (e) => {
     });
 
     editBtn.addEventListener("click", (e) => {
-        if(e.target.textContent == "Edit"){
+        if(e.target.textContent === "Edit"){
             editInput.value = itemName.textContent;
             editBtn.textContent = "Save";
         
             listItem.prepend(editInput);
-        } else if(e.target.textContent == "Save") {
+        } 
+        else if(e.target.textContent === "Save") {
             itemName.textContent = editInput.value;
             editBtn.textContent = "Edit";
-            editInput.remove;
+            editInput.remove();
         }
     })
 });
