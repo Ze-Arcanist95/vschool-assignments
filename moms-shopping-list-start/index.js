@@ -28,7 +28,9 @@ form.addEventListener("submit", (e) => {
     });
 
     editBtn.addEventListener("click", (e) => {
-        editInput = itemName.textContent;
+        editInput.value = itemName.textContent;
         editBtn.textContent = "Save";
+        
+        listItem.append(editInput);
     })
 });
