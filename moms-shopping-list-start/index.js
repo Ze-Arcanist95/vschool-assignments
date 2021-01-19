@@ -9,6 +9,7 @@ form.addEventListener("submit", (e) => {
     const itemName = document.createElement("div");
     const editBtn = document.createElement("button");
     const deleteBtn = document.createElement("button");
+    const editInput = document.createElement("input");
 
     listItem.classList.add("list-item");
     itemName.textContent = input.value;
@@ -26,4 +27,8 @@ form.addEventListener("submit", (e) => {
         e.target.parentNode.remove();
     });
 
+    editBtn.addEventListener("click", (e) => {
+        editInput = itemName.textContent;
+        editBtn.textContent = "Save";
+    })
 });
