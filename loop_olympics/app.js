@@ -65,17 +65,30 @@ var peopleArray = [
 ]
 
 // Write a loop that will print out all the names of the people of the people array
+/*
     for(i = 0; i < peopleArray.length; i++){
         console.log(peopleArray[i].name);
     };
-
+*/
 // Write a loop that pushes the names into a names array, and the occupations into an occupations array.
+/*
     let nameArray = [];
     let occupationArray = [];
     for(i = 0; i < peopleArray.length; i++){
         nameArray.push(peopleArray[i].name);
         occupationArray.push(peopleArray[i].occupation);
     };
+*/
+// Write a loop that pushes every other name to an array starting with the first person, in this case "Harrison Ford", and every other occupation to another array starting with, in this case, "Singer".
+/*
+    let namesArray = [];
+    let occupationsArray = [];
+    for(i = 0; i < peopleArray.length; i++){
+        if(i % 2 === 0){
+            namesArray.push(peopleArray[i].name);
+        } else if(i % 2 !== 0){
+            occupationsArray.push(peopleArray[i].occupation);
+        }
+    };
+*/
 
-// Write a loop that pushes every other name to an array starting with the first person, in this case "Harrison Ford", and every other occupation to another array starting with, in this case, "Singer".Think about what good names for the arrays would be. Since it will be an array of each name or occupation, the plurals of name and occupation would be appropriate.
-    
