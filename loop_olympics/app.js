@@ -92,3 +92,21 @@ var peopleArray = [
     };
 */
 
+// Create an array that mimics a grid like the following using nested for loops:
+/*  
+    [[0, 0, 0], 
+    [0, 0, 0], 
+    [0, 0, 0]]
+*/
+
+    let grid = [
+        [],
+        [],
+        []
+    ]
+    for (i = 0; i < 3; i++){
+        for (i2 = 0; i2 < 3; i2++){
+            grid[i][i2] = 0;
+        }    
+    }
+    console.log(grid)
