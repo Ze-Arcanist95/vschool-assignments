@@ -86,11 +86,11 @@ Sample Arrays:
 [1, 1, 1, 1, 3]   // "The light is on"
 [9, 3, 4, 2]      // "The light is off"
 */
-        let numArr = [1, 1, 1, 1, 3]
+        let numArr = [2, 5, 435, 4, 3]
         let lightStatus = false;
         
         function toggle(){
-            lightStatus = lightStatus? true : false;
+            lightStatus = !lightStatus;
         }
 
         for(i = 0; i < numArr.length; i++){
