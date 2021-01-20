@@ -86,4 +86,17 @@ Sample Arrays:
 [1, 1, 1, 1, 3]   // "The light is on"
 [9, 3, 4, 2]      // "The light is off"
 */
-    
+        let numArr = [1, 1, 1, 1, 3]
+        let lightStatus = false;
+        
+        function toggle(){
+            lightStatus = lightStatus? true : false;
+        }
+
+        for(i = 0; i < numArr.length; i++){
+            for(i2 = 1; i2 <= numArr[i]; i2++){
+                toggle()
+            }
+            let lightUpdate = lightStatus? (alert("The light is on")) : (alert("The light is off"));
+            console.log(lightUpdate)
+        }
