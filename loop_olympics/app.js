@@ -86,7 +86,7 @@ var peopleArray = [
     for(i = 0; i < peopleArray.length; i++){
         if(i % 2 === 0){
             namesArray.push(peopleArray[i].name);
-        } else if(i % 2 !== 0){
+        } else {
             occupationsArray.push(peopleArray[i].occupation);
         }
     };
@@ -97,7 +97,6 @@ var peopleArray = [
     [[0, 0, 0], 
     [0, 0, 0], 
     [0, 0, 0]]
-*/
 
     let grid = [
         [],
@@ -109,4 +108,5 @@ var peopleArray = [
             grid[i][i2] = 0;
         }    
     }
-    console.log(grid)
+*/
+
