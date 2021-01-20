@@ -92,6 +92,7 @@ var peopleArray = [
     };
 */
 
+// Gold Medal
 // Create an array that mimics a grid like the following using nested for loops:
 /*  
     [[0, 0, 0], 
@@ -102,11 +103,41 @@ var peopleArray = [
         [],
         [],
         []
-    ]
-    for (i = 0; i < 3; i++){
+    ];
+    for (i = 0; i < grid.length; i++){
         for (i2 = 0; i2 < 3; i2++){
             grid[i][i2] = 0;
         }    
     }
 */
+/*
+    [[0, 0, 0], 
+    [1, 1, 1], 
+    [2, 2, 2]]
 
+    let grid = [
+        [],
+        [],
+        []
+    ];
+    for(i = 0; i < grid.length; i++){
+        for(i2 = 0; i2 < grid.length; i2++){
+            grid[i][i2] = i;
+        };
+    };
+*/
+/*
+    [[0, 1, 2], 
+    [0, 1, 2], 
+    [0, 1, 2]]
+*/
+    let grid = [
+        [],
+        [],
+        []
+    ];
+    for(i = 0; i < grid.length; i++){
+        for(i2 = 0; i2 < grid.length; i++){
+            
+        } 
+    }
