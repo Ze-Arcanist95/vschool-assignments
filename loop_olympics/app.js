@@ -44,7 +44,7 @@
 */
 
 // Silver Medal
-
+/*
 var peopleArray = [
     {
         name: "Harrison Ford",
@@ -65,22 +65,22 @@ var peopleArray = [
 ]
 
 // Write a loop that will print out all the names of the people of the people array
-/*
+
     for(i = 0; i < peopleArray.length; i++){
         console.log(peopleArray[i].name);
     };
-*/
+
 // Write a loop that pushes the names into a names array, and the occupations into an occupations array.
-/*
+
     let nameArray = [];
     let occupationArray = [];
     for(i = 0; i < peopleArray.length; i++){
         nameArray.push(peopleArray[i].name);
         occupationArray.push(peopleArray[i].occupation);
     };
-*/
+
 // Write a loop that pushes every other name to an array starting with the first person, in this case "Harrison Ford", and every other occupation to another array starting with, in this case, "Singer".
-/*
+
     let namesArray = [];
     let occupationsArray = [];
     for(i = 0; i < peopleArray.length; i++){
@@ -130,14 +130,23 @@ var peopleArray = [
     [[0, 1, 2], 
     [0, 1, 2], 
     [0, 1, 2]]
-*/
+
     let grid = [
         [],
         [],
         []
     ];
     for(i = 0; i < grid.length; i++){
-        for(i2 = 0; i2 < grid.length; i++){
-            
+        for(i2 = 0; i2 < grid.length; i2++){
+            grid[i][i2] = i2;
         } 
     }
+*/
+// Given a grid like the previous ones, write a nested for loop that would change every number to an x.
+/*
+    for (i = 0; i < grid.length; i++){
+        for (i2 = 0; i2 < grid.length; i2++){
+            grid[i][i2] = "x";
+        }    
+    }
+*/
