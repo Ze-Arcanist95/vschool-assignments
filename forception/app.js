@@ -1,5 +1,5 @@
 let people = ["Jon", "Jacob", "Jingle", "Heimer", "Schmidt"];
-let alphabet = ["abcdefghijklmnopqrstuvwxyz"];
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 function forception(people,alphabet){
     let funcOutput = []
