@@ -6,7 +6,7 @@
     };
 
 // Write a for loop that prints to the console 9 through 0.
-    for(i = 10; i > 0; i--){
+    for(i = 10; i >= 0; i--){
         console.log(i);
     };
 // Write a for loop that prints these fruits to the console.
@@ -14,7 +14,6 @@
     for(i = 0; i < fruit.length; i++){
         console.log(fruit[i]);
     };
-
 */
 /*
 // Bronze Medal
