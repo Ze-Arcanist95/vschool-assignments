@@ -11,5 +11,8 @@
     "url": "https://github.com/Ze-Arcanist95/vschool-assignments/tree/main/colossal_adventure_console_rpg"
   },
   "author": "Zachary Arcane",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
