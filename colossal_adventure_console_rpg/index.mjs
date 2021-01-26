@@ -74,6 +74,7 @@ function printInventory() {
     console.log("Health: " + player.hitPoints);
     console.log("Action Points: " + player.actionPoints);
     console.log("Inventory: " + player.inventory);
+
 }
 function enemyEncounter(){
     const random = Math.floor(Math.random() * enemies.length);
@@ -122,7 +123,7 @@ const player = new character(name, 100, 50);
 while(isAlive === true) {
     isGameOver();
 
-    const action = keyIn("Would you like to [w] Walk, [p] Print Inventory, or [q] Quit?", {limit: 'wqp'});
+    const action = keyIn("Would you like to [w] Walk, [p] Print Inventory/Vitals, or [q] Quit?", {limit: 'wqp'});
     
     if (action === "w") {
         walk();
@@ -137,7 +138,7 @@ while(isAlive === true && inBattle === true) {
     isGameOver();
     isFightOver();
 
-    const fight = keyIn("Would you like to [f] Fight, [p] Print Inventory, or [r] Run?", {limit: "fpr"});
+    const fight = keyIn("Would you like to [f] Fight, [p] Print Inventory/Vitals, or [r] Run?", {limit: "fpr"});
 
     if (fight === "f") {
         fightEnemy();
