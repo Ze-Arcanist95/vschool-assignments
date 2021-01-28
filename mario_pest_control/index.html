@@ -17,48 +17,43 @@
     <main>
         <div class="list-container">
             <h3 class="headline">Pest List</h3>
-            <ul id="pests">
-                <li id="goomba">
-                    <img class="pest-img" src="https://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Goomba-icon.png">
-                    <h5 class="pest-name headline">Goombas</h5>
-                    <p class="price-marker">Value: 5 Coins</p>
-                    <form class="tracking-form" name="goombaForm">
-                        <input type="digit" name="goombaInput" placeholder="ex. 1, 2, 3">
-                        <button type="submit" id="goombaSubmit">Submit</button>
-                    </form>
-                </li>
-                <li id="bob-omb">
-                    <img class="pest-img" src="https://screenshots.gamebanana.com/img/ico/sprays/bob_omb.png">
-                    <h5 class="pest-name headline">Bob-ombs</h5>
-                    <p class="price-marker">Value: 7 Coins</p>
-                    <form class="tracking-form" name="bombForm">
-                        <input type="digit" name="bombInput" placeholder="ex. 1, 2, 3">
-                        <button type="submit" id="bombSubmit">Submit</button>
-                    </form>
-                </li>
-                <li id="cheep-cheep">
-                    <img class="pest-img" src="https://vignette.wikia.nocookie.net/luigi-mansionfanon/images/2/20/Cheep-Cheep.png/revision/latest?cb=20120708123141">
-                    <h5 class="pest-name headline">Cheep-cheeps</h5>
-                    <p class="price-marker">Value: 11 Coins</p>
-                    <form class="tracking-form" name="cheepForm">
-                        <input type="digit" name="cheepInput" placeholder="ex. 1, 2, 3">
-                        <button type="submit" id="cheepSubmit">Submit</button>
-                    </form>
-                </li>
-            </ul>
+            <form name="pestTracker">
+                <ul id="pests">
+                    <li id="goomba">
+                        <img class="pest-img" src="https://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Goomba-icon.png">
+                        <h5 class="pest-name headline">Goombas</h5>
+                        <p class="price-marker">Value: 5 Coins</p>
+                            <input type="number" name="goombaInput" placeholder="ex. 1, 2, 3">
+                    </li>
+                    <li id="bob-omb">
+                        <img class="pest-img" src="https://screenshots.gamebanana.com/img/ico/sprays/bob_omb.png">
+                        <h5 class="pest-name headline">Bob-ombs</h5>
+                        <p class="price-marker">Value: 7 Coins</p>
+                            <input type="number" name="bombInput" placeholder="ex. 1, 2, 3">
+                    </li>
+                    <li id="cheep-cheep">
+                        <img class="pest-img" src="https://vignette.wikia.nocookie.net/luigi-mansionfanon/images/2/20/Cheep-Cheep.png/revision/latest?cb=20120708123141">
+                        <h5 class="pest-name headline">Cheep-cheeps</h5>
+                        <p class="price-marker">Value: 11 Coins</p>
+                            <input type="number" name="cheepInput" placeholder="ex. 1, 2, 3">
+                    </li>
+                </ul>
+                <button id="submit" class="button" type="submit">Submit</button>
+            </form>
+                
         </div>
         <hr>
         <div class="tracking-container">
             <h3 class="headline">Overall Caught & Pricing</h3>
             <div class="pest-ranking">
                 <div class="row">
-                    <span class="name">Goombas: </span><span class="score">0</span>
+                    <span class="name">Goombas: </span><span id="goombaCount">0</span>
                 </div>
                 <div class="row">
-                    <span class="name">Bob-ombs: </span><span class="score">0</span>
+                    <span class="name">Bob-ombs: </span><span id="bombCount"></span>
                 </div>
                 <div class="row">
-                    <span class="name">Cheep-cheeps: </span><span class="score">0</span>
+                    <span class="name">Cheep-cheeps: </span><span id="cheepCount"></span>
                 </div>
             </div>
             <div class="pricing">
