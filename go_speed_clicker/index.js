@@ -1,14 +1,16 @@
 const timerBtn = document.getElementById('timer-button');
 const resetBtn = document.getElementById('reset-button')
 const clickCount = document.getElementById('click-count');
-
 let isTimed = false;
 let timeLeft = 15;
+let counter = 0;
+
+clickCount.textContent = counter;
 
 while(isTimed = true) {
-    body.addEventListener("click", () => {
-        clickCount.textContent = parseInt(clickCount.textContent) + 1;
-    })
+    $('body').click(function(){
+        counter + 1;
+      });
 }
 
 function startTimer() {
