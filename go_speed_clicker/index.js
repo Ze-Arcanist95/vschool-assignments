@@ -26,5 +26,5 @@ function startTimer() {
 }
 function reset() {
     timeLeft = 15;
-    clickCount.textContent = 0;
+    counter = 0;
 }
