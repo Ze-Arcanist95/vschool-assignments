@@ -8,7 +8,7 @@ let counter = 0;
 clickCount.textContent = counter;
 
 while(isTimed = true) {
-    $('body').click(function(){
+    document.body.addEventListener("click", () => {
         counter + 1;
       });
 }
