@@ -9,7 +9,7 @@ localStorage.setItem("count", countVar);
 clickCount.textContent = localStorage.getItem("count");
 
 while(isTimed === true) {
-    document.body.addEventListener("click", () => {
+    window.addEventListener("click", () => {
         countVar + 1;
       });
 }
