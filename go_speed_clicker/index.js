@@ -1,15 +1,18 @@
+localStorage.setItem("count", 0)
+
 const timerBtn = document.getElementById('timer-button');
 const resetBtn = document.getElementById('reset-button')
 const clickCount = document.getElementById('click-count');
 let isTimed = false;
 let timeLeft = 15;
-let counter = 0;
+let countVar = 0
 
-clickCount.textContent = counter;
+clickCount.textContent = localStorage.getItem("count");
 
 while(isTimed = true) {
-    document.body.addEventListener("click", () => {
-        counter + 1;
+    document.body.addEventListener("mouseup", () => {
+        countVar + 1;
+        localStorage.setItem("count", countVar);
       });
 }
 
