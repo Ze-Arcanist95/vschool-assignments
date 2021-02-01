@@ -1,15 +1,17 @@
 const timerBtn = document.getElementById('timer-button');
 const resetBtn = document.getElementById('reset-button')
 const clickCount = document.getElementById('click-count');
-const clickMe = document.getElementById("click-me");
+const clickBtn = document.getElementById("click-button");
 let isTimed = false;
 let timeLeft = 15;
 
 while(isTimed === true) {
-  clickMe.addEventListener("click", clickIncrement);
+  clickBtn.addEventListener("click", clickIncrement);
+  console.log("clicked")
 };
 
 function clickIncrement() {
+  console.log ("Incrementing")
   if (localStorage.getItem("clickCounter") === null) {
     localStorage.setItem("clickCounter", "0");
   }
