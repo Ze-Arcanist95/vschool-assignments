@@ -5,15 +5,19 @@ const clickMe = document.getElementById("click-me");
 let isTimed = false;
 let timeLeft = 15;
 
-localStorage.setItem("clickCount", 0);
+while(isTimed === true) {
+  clickMe.addEventListener("click", clickIncrement);
+};
 
-clickMe.addEventListener("click", () => {
-  let clicks = parseInt(localStorage.getItem("clickCount"));
-  localStorage.setItem("clickCount", ++clicks);
-  clickCount.textContent = localStorage.getItem("clickCount");
-});
-//while(isTimed === true) {};
-
+function clickIncrement() {
+  if (localStorage.getItem("clickCounter") === null) {
+    localStorage.setItem("clickCounter", "0");
+  }
+  let count = parseInt(localStorage.getItem("clickCounter"));
+  let newCount = count + 1;
+  localStorage.setItem("clickCounter", newCount);
+  clickCount.innerHTML = newCount; 
+}
 function startTimer() {
     if(timeLeft === 0){
       timerBtn.textContent = "Start";
