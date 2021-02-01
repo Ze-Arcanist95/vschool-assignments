@@ -19,17 +19,18 @@ function clickIncrement() {
   clickCount.innerHTML = newCount; 
 }
 function startTimer() {
-    if(timeLeft === 0){
-      timerBtn.textContent = "Start";
-      isTimed = false;
-    } else {
-      timerBtn.textContent = timeLeft + " seconds remaining";
-      timeLeft--;
-      isTimed = true;
-      setTimeout(startTimer, 1000);
-    }
+  if(timeLeft === 0){
+    timerBtn.textContent = "Start";
+    isTimed = false;
+  } else {
+    timerBtn.textContent = timeLeft + " seconds remaining";
+    timeLeft--;
+    isTimed = true;
+    setTimeout(startTimer, 1000);
+  }
 }
 function reset() {
-    timeLeft = 15;
-    countVar = 0;
+  timeLeft = 15;
+  localStorage.setItem("clickCounter", "0")
+  clickCount.innerHTML = "0"
 }
