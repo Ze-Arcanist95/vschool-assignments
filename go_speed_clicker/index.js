@@ -5,12 +5,12 @@ const clickMe = document.getElementById("click-me");
 let isTimed = false;
 let timeLeft = 15;
 
-localStorage.setItem("clicks", 0);
+localStorage.setItem("clickCount", 0);
 
 clickMe.addEventListener("click", () => {
-  let clicks = parseInt(localStorage.getItem("clicks"));
-  localStorage.setItem("clicks", ++clicks);
-  clickCount.textContent = localStorage.getItem("clicks");
+  let clicks = parseInt(localStorage.getItem("clickCount"));
+  localStorage.setItem("clickCount", ++clicks);
+  clickCount.textContent = localStorage.getItem("clickCount");
 });
 //while(isTimed === true) {};
 
