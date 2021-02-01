@@ -4,17 +4,20 @@ const clickCount = document.getElementById('click-count');
 const clickMe = document.getElementById("click-me");
 let isTimed = false;
 let timeLeft = 15;
+
 localStorage.setItem("clicks", "0");
   let count = localStorage.getItem("clicks");
+
 clickCount.textContent = count;
-while(isTimed === true) {
-  clickMe.addEventListener("click", () => {
-    let clicks = parseInt(count);
-    localStorage.setItem("clicks", ++clicks)
-    clickCount.textContent = count
-    console.log("clicked")
-  });
-}
+
+clickMe.addEventListener("click", () => {
+  let clicks = parseInt(count);
+  localStorage.setItem("clicks", ++clicks);
+  clickCount.textContent = count;
+  console.log("clicked");
+});
+//while(isTimed === true) {};
+
 function startTimer() {
     if(timeLeft === 0){
       timerBtn.textContent = "Start";
