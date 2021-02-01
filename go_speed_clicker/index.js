@@ -1,18 +1,16 @@
+localStorage.setItem("count", 0);
+
 const timerBtn = document.getElementById('timer-button');
 const resetBtn = document.getElementById('reset-button')
 const clickCount = document.getElementById('click-count');
+const clickMe = document.getElementById("click-me");
 let isTimed = false;
 let timeLeft = 15;
-let countVar = 0;
+let countVar = localStorage.getItem("count")
 
-localStorage.setItem("count", countVar);
-clickCount.textContent = localStorage.getItem("count");
+clickCount.innerHTML = countVar;
 
-while(isTimed === true) {
-    window.addEventListener("click", () => {
-        countVar + 1;
-      });
-}
+// while(isTimed === true) {}
 
 function startTimer() {
     if(timeLeft === 0){
@@ -25,7 +23,10 @@ function startTimer() {
       setTimeout(startTimer, 1000);
     }
 }
+function clicker() {
+  countVar++;
+}
 function reset() {
     timeLeft = 15;
-    counter = 0;
+    countVar = 0;
 }
