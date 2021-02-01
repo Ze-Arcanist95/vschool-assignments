@@ -3,25 +3,25 @@ const resetBtn = document.getElementById('reset-button')
 const clickCount = document.getElementById('click-count');
 let isTimed = false;
 let timeLeft = 15;
-let countVar = 0
+let countVar = 0;
 
 localStorage.setItem("count", countVar);
 clickCount.textContent = localStorage.getItem("count");
 
-while(isTimed = true) {
-    document.body.addEventListener("mouseup", () => {
+while(isTimed === true) {
+    document.body.addEventListener("click", () => {
         countVar + 1;
       });
 }
 
 function startTimer() {
-    isTimed = true;
     if(timeLeft === 0){
-      timerBtn.innerHTML = "Start";
+      timerBtn.textContent = "Start";
       isTimed = false;
     } else {
-      timerBtn.innerHTML = timeLeft + " seconds remaining";
+      timerBtn.textContent = timeLeft + " seconds remaining";
       timeLeft--;
+      isTimed = true;
       setTimeout(startTimer, 1000);
     }
 }
