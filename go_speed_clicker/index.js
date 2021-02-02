@@ -5,10 +5,7 @@ const clickBtn = document.getElementById("click-button");
 let isTimed = false;
 let timeLeft = 15;
 
-while(isTimed === true) {
-  clickBtn.addEventListener("click", clickIncrement);
-  console.log("clicked")
-};
+clickBtn.addEventListener("click", clickIncrement);
 
 function clickIncrement() {
   console.log ("Incrementing")
