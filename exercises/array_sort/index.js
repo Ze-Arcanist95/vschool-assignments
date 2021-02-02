@@ -21,3 +21,24 @@
     }
     
     console.log(lengthSort(["dog", "wolf", "by", "family", "eaten"]));
+
+// 4) Sort an array alphabetically
+
+    function alphabetical(arr) {
+        return arr.sort()
+    }
+    
+    console.log(alphabetical(["dog", "wolf", "by", "family", "eaten"]));
+
+// 5) Sort the objects in the array by age
+
+    function byAge(arr){
+        return arr.sort((a, b) => a.age > b.age)
+    }
+    
+    console.log(byAge([
+        { name: "Quiet Samurai", age: 22 },
+        { name: "Arrogant Ambassador", age: 100 },
+        { name: "Misunderstood Observer", age: 2 },
+        { name: "Unlucky Swami", age: 77 }
+    ]));
