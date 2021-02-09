@@ -101,28 +101,25 @@
     ];
     
     function voterResults(arr) {
-       return arr.reduce((final, current) => {
-            if(current.age >= 18 && current.age <= 25 && current.voted){
-                final.numYoungVotes++;
-            } else if(current.age >= 18 && current.age <= 25){
+        return arr.reduce((final, current) => {
+            if(current.age >= 18 && current.age <= 25){
                 final.numYoungPeople++;
-            } else if(current.age >= 26 && current.age <= 35 && current.voted){
-                final.numMidVotes++;
+                if(current.voted){
+                    final.numYoungVotes++;
+                }
             } else if(current.age >= 26 && current.age <= 35){
                 final.numMidPeople++;
-            } else if(current.age >= 36 && current.age <= 55 && current.voted){
-                final.numOldVotes++;
+                if(current.voted){
+                    final.numMidVotes++;
+                }
             } else if(current.age >= 36 && current.age <= 55){
                 final.numOldPeople++;
+                if(current.voted){
+                    final.numOldVotes++;
+                }
             }
             return final;
-       }, { numYoungVotes: 0,
-        numYoungPeople: 0,
-        numMidVotes: 0,
-        numMidPeople: 0,
-        numOldVotes: 0,
-        numOldPeople: 0 
-      })
+        }, { numYoungVotes: 0, numYoungPeople: 0, numMidVotes: 0, numMidPeople: 0, numOldVotes: 0, numOldPeople: 0 })
     }
     
     console.log(voterResults(voters));
