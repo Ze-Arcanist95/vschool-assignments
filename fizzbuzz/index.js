@@ -8,8 +8,8 @@ function FizzBuzz(value1, value2) {
 
 function populateTable(){
     let output = [];
-    let headTemplate = document.getElementById('template-header');
-    let rowTemplate = document.getElementById('template-row-items');
+    let headTemplate = document.getElementById('template-heading');
+    let rowTemplate = document.getElementById('template-rows');
     
     let templateHTML = rowTemplate.innerHTML;
     let resultsHTML = headTemplate.innerHTML;
@@ -19,11 +19,11 @@ function populateTable(){
     
     output = FizzBuzz(val1,val2);
     for(i = 1; i < output.length; i += 5){
-        resultsHTML += templateHTML.replace('{{val1}}', output[i])
-            .replace('{{val2}}', output[i + 1])
-            .replace('{{val3}}', output[i + 2])
-            .replace('{{val4}}', output[i + 3])
-            .replace('{{val5}}', output[i + 4]);
+        resultsHTML += templateHTML.replace('value-1', output[i])
+            .replace('value-2', output[i + 1])
+            .replace('value-3', output[i + 2])
+            .replace('value-4', output[i + 3])
+            .replace('value-5', output[i + 4]);
     }
     document.getElementById('result').innerHTML = resultsHTML;
 }
