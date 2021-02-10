@@ -11,9 +11,9 @@ class Player {
         this.hasStar = false;
     }
     setName(namePicked){
-        if (namePicked === "Mario"){
+        if (namePicked === 0){
             this.name = "Mario";
-        } else if (namePicked === "Luigi"){
+        } else if (namePicked === 1){
             this.name = "Luigi";
         }
     }
