@@ -17,9 +17,9 @@ class Player {
     }
     setName(namePicked){
         if (namePicked === nameChoices[0]){
-            this.name = nameChoices[0];
+            this.name = "Mario";
         } else if (namePicked === nameChoices[1]){
-            this.name = nameChoices[1];
+            this.name = "Luigi";
         }
     }
     gotHit(){
@@ -65,19 +65,16 @@ class Player {
 }
 
 const player = new Player();
-const nameSelect = readline.keyInSelect(nameChoices);
-    player.setName(nameSelect);
 
 let intervalId = setInterval(getRandomInt, 1000);
-    if(getRandomInt === 0){
-        player.gotHit();
-    } else if (getRandomInt === 1){
-        player.gotPowerup();
-    } else if (getRandomInt === 2){
-        player.addCoin();
-    }
-    player.print()
-    
+if(getRandomInt === 0){
+    player.gotHit();
+} else if (getRandomInt === 1){
+    player.gotPowerup();
+} else if (getRandomInt === 2){
+    player.addCoin();
+}
+player.print()
 if(player.gameActive === false){
     clearInterval(intervalId);
 }
