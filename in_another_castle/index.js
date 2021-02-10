@@ -1,11 +1,6 @@
 const readline = require("readline-sync")
 const statusValues = ["Dead", "Small", "Large", "Powered Up"];
 const nameChoices = ["Mario", "Luigi"]
-const getRandomInt = () => {
-    min = Math.ceil(0);
-    max = Math.floor(2);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 class Player {
     constructor() {
@@ -16,9 +11,9 @@ class Player {
         this.hasStar = false;
     }
     setName(namePicked){
-        if (namePicked === nameChoices[0]){
+        if (namePicked === "Mario"){
             this.name = "Mario";
-        } else if (namePicked === nameChoices[1]){
+        } else if (namePicked === "Luigi"){
             this.name = "Luigi";
         }
     }
@@ -63,18 +58,26 @@ class Player {
         `)
     }
 }
-
 const player = new Player();
+const name = readline.keyInSelect(nameChoices);
+player.setName(name);
 
-let intervalId = setInterval(getRandomInt, 1000);
-if(getRandomInt === 0){
-    player.gotHit();
-} else if (getRandomInt === 1){
-    player.gotPowerup();
-} else if (getRandomInt === 2){
-    player.addCoin();
+const activeGameCodeBlock = () => {
+    min = Math.ceil(0);
+    max = Math.floor(2);
+    let randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    if(randomInt === 0){
+        player.gotHit();
+    } else if (randomInt === 1){
+        player.gotPowerup();
+    } else if (randomInt === 2){
+        player.addCoin();
+    }
+    player.print()
+    
+    if(player.gameActive === false){
+        clearInterval(intervalId);
+    }
 }
-player.print()
-if(player.gameActive === false){
-    clearInterval(intervalId);
-}
+const intervalId = setInterval(activeGameCodeBlock, 1000);
