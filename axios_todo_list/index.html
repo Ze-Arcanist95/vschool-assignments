@@ -5,16 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axios Todo Application</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form>
-        <input type="text" name="title" placeholder="Title">
-        <input type="text" name="description" placeholder="Description">
-        <input type="text" name="imgUrl" placeholder="Image URL">
-        <button type="submit"></button>
-    </form>
+    <header>
+        <h1 class="text-center">Ze_Arcanist95's To-Do List Application</h1>
+        <p class="text-center">The creator is not liable for any distaste you may have with the functioning of this application. Stop being a snowflake and get your life together! Organize those tasks, get busy, and you'll realize just how little time you have left to be a Karen.</p>
+    </header>
+    <main>
+        <form class="todo-submit-container" name="newTodoForm">
+            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="description" placeholder="Description">
+            <input type="text" name="imgUrl" placeholder="Image URL">
+            <button type="submit"></button>
+        </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="index.js"></script>
+        <div class="todo-list-container" id="todo-list">
+
+        </div>
+    </main>
+    <footer>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="index.js"></script>
+    </footer>
 </body>
 </html>
