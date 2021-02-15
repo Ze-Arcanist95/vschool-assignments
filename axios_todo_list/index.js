@@ -11,18 +11,19 @@ function listData(data){
         const itemTitle = document.createElement('h3');
         const itemDesc = document.createElement('p');
         const itemImg = document.createElement('img');
-        const editInput = document.createElement('input');
         const editBtn = document.createElement('button');
         const delBtn = document.createElement('button');
         const docFragment = document.createDocumentFragment()
 
+        itemContainer.classList.add('list-item');
         itemTitle.textContent = data[i].title;
         itemTitle.classList.add('item-title');
         itemDesc.textContent = data[i].description;
         itemDesc.classList.add('item-desc');
         itemImg.src = data[i].imgUrl;
         itemImg.classList.add('item-img');
-        itemContainer.classList.add('list-item');
+        editBtn.innerText = 'Edit';
+        editBtn.classList.add('edit-button');
         
         itemContainer.append(itemTitle, itemDesc, itemImg);
         document.getElementById('todo-list-container').append(itemContainer);
