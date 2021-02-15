@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1 class="text-center">Ze_Arcanist95's To-Do List Application</h1>
-        <p class="text-center">The creator is not liable for any distaste you may have with the functioning of this application. Stop being a snowflake and get your life together! Organize those tasks, get busy, and you'll realize just how little time you have left to be a Karen.</p>
-    </header>
-    <main>
-        <form class="todo-submit-container" name="newTodoForm">
-            <input type="text" name="title" placeholder="Title">
-            <input type="text" name="description" placeholder="Description">
-            <input type="text" name="imgUrl" placeholder="Image URL">
-            <button type="submit"></button>
-        </form>
-
-        <div class="todo-list-container" id="todo-list">
-
-        </div>
-    </main>
-    <footer>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="index.js"></script>
-    </footer>
+    <div class="floating-container">
+        <header>
+            <h1 class="text-center container-margin">Ze_Arcanist95's To-Do List Application</h1>
+        </header>
+        <main>
+            <p class="desc container-margin">The creator is not liable for any distaste you may have with the functioning of this application. Organize those tasks, get busy with it, and you'll realize just how little time you have left to be a Karen! Moving on though... We have created a form which will allow you to Create, Edit, and/or Remove individual to-do list items. Each item should have a title and is limited to, but does not require, a description and accompanying image link. The images should be an addition to categorize and/or provide at a glance reminders of the task details.</p>
+            <form class="todo-submit-container" name="newTodoForm">
+                <input type="text" name="title" placeholder="Title">
+                <input type="text" name="description" placeholder="Description">
+                <input type="text" name="imgUrl" placeholder="Image URL">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+    
+            <div class="todo-list-container" id="todo-list">
+    
+            </div>
+        </main>
+        <footer>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="index.js"></script>
+        </footer>
+    </div>
 </body>
 </html>
