@@ -1,5 +1,8 @@
+// Global Variables
 const listContainer = document.getElementById('todo-list');
+const todoForm = document.newTodoForm
 
+// Functions
 function getApi(){
     axios.get("https://api.vschool.io/ze_arcanist95/todo")
         .then(res => displayData(res.data))
@@ -34,10 +37,33 @@ function displayData(data){
         delBtn.innerText = 'Delete';
         delBtn.classList.add('delete-button');
 
+        if (itemImg.src === ""){
+            itemImg.style.display = "none";
+        }
+
         docFragment.appendChild(itemContainer);
         itemContainer.append(itemTitle, itemDesc, itemImg, editBtn, delBtn);
         listContainer.appendChild(itemContainer);
     }
 }
+
+// Event Handlers
+todoForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    
+    const newTodo = {
+        title: todoForm.title.value,
+        description: todoForm.description.value,
+        imgUrl: todoForm.imgUrl.value
+    }
+    
+    todoForm.title.value = "";
+    todoForm.description.value = "";
+    todoForm.imgUrl.value = "";
+    
+    axios.post("https://api.vschool.io/ze_arcanist95/todo", newTodo)
+        .then(res => getData())
+        .catch(err => console.log(err));
+})
 
 getApi();
