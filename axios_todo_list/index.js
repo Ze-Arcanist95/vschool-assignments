@@ -1,13 +1,20 @@
-function getData(){
+const listContainer = document.getElementById('todo-list');
+
+function getApi(){
     axios.get("https://api.vschool.io/ze_arcanist95/todo")
-        .then(res => listData(res.data))
-        .catch(err => console.log(err))
+        .then(res => displayData(res.data))
+        .catch(err => console.log(err));
 }
-function listData(data){
-    clearList()
+function clearList(){
+    while(listContainer.firstChild){
+        listContainer.removeChild(listContainer.firstChild);
+    }
+}
+function displayData(data){
+    clearList();
     
     for(let i = 0; i < data.length; i++){
-        const itemContainer = document.createElement('div');
+        const itemContainer = document.createElement('li');
         const itemTitle = document.createElement('h3');
         const itemDesc = document.createElement('p');
         const itemImg = document.createElement('img');
@@ -24,8 +31,13 @@ function listData(data){
         itemImg.classList.add('item-img');
         editBtn.innerText = 'Edit';
         editBtn.classList.add('edit-button');
-        
-        itemContainer.append(itemTitle, itemDesc, itemImg);
-        document.getElementById('todo-list-container').append(itemContainer);
+        delBtn.innerText = 'Delete';
+        delBtn.classList.add('delete-button');
+
+        docFragment.appendChild(itemContainer);
+        itemContainer.append(itemTitle, itemDesc, itemImg, editBtn, delBtn);
+        listContainer.appendChild(itemContainer);
     }
 }
+
+getApi();
