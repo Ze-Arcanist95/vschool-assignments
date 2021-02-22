@@ -21,6 +21,7 @@ function displayData(data){
         const itemTitle = document.createElement('h3');
         const itemDesc = document.createElement('p');
         const itemImg = document.createElement('img');
+        const checkBox = document.createElement('input');
         const editBtn = document.createElement('button');
         const delBtn = document.createElement('button');
         const docFragment = document.createDocumentFragment()
@@ -32,24 +33,26 @@ function displayData(data){
         itemDesc.classList.add('item-desc');
         itemImg.src = data[i].imgUrl;
         itemImg.classList.add('item-img');
+        checkBox.setAttribute('type', 'checkbox');
+        checkBox.classList.add('checkbox');
         editBtn.innerText = 'Edit';
         editBtn.classList.add('edit-button');
         delBtn.innerText = 'Delete';
         delBtn.classList.add('delete-button');
 
-        if (itemImg.src === ""){
+        if (itemImg.src === "") {
             itemImg.style.display = "none";
         }
 
         docFragment.appendChild(itemContainer);
-        itemContainer.append(itemTitle, itemDesc, itemImg, editBtn, delBtn);
+        itemContainer.append(itemTitle, itemDesc, itemImg,checkBox, editBtn, delBtn);
         listContainer.appendChild(itemContainer);
     }
 }
 
 // Event Handlers
 todoForm.addEventListener("submit", (e) => {
-    e.preventDefault()
+    e.preventDefault();
     
     const newTodo = {
         title: todoForm.title.value,
@@ -62,8 +65,9 @@ todoForm.addEventListener("submit", (e) => {
     todoForm.imgUrl.value = "";
     
     axios.post("https://api.vschool.io/ze_arcanist95/todo", newTodo)
-        .then(res => getData())
+        .then(res => getApi())
         .catch(err => console.log(err));
 })
+
 
 getApi();

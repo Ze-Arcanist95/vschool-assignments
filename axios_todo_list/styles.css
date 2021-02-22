@@ -96,6 +96,15 @@ main {
     margin: auto;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    height: 100px;
+    width: 100px;
+}
+.checkbox {
+    display: block;
+    grid-column: 1 / 4;
+    grid-row: 4 / 4;
+    margin: auto;
+    text-align: center;
 }
 .edit-button {
     display: block;
