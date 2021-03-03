@@ -36,9 +36,12 @@ function displayData(data){
         checkBox.setAttribute('type', 'checkbox');
         checkBox.classList.add('checkbox');
         editBtn.innerText = 'Edit';
+        editBtn.setAttribute('onclick', 'editTodo()');
         editBtn.classList.add('edit-button');
         delBtn.innerText = 'Delete';
+        delBtn.setAttribute('onclick', 'deleteTodo()');
         delBtn.classList.add('delete-button');
+
 
         if (itemImg.src === "") {
             itemImg.style.display = "none";
@@ -68,6 +71,12 @@ todoForm.addEventListener("submit", (e) => {
         .then(res => getApi())
         .catch(err => console.log(err));
 })
+function editTodo(object) {
 
-
+} 
+function deleteTodo(object) {
+    axios.delete("https://api.vschool.io/ze_arcanist95/todo/" + object._id)
+        .then(res => getApi())
+        .catch(err => console.log(err));
+}
 getApi();
