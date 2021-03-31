@@ -35,22 +35,74 @@ function displayData(data){
         itemImg.classList.add('item-img');
         checkBox.setAttribute('type', 'checkbox');
         checkBox.classList.add('checkbox');
+        if (data[i].completed) {
+            checkBox.checked = true;
+        }
+        checkBox.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            itemTitle.classList.toggle('item-complete');
+            itemDesc.classList.toggle('item-complete');
+            if (checkBox.checked) {
+                axios.put("https://api.vschool.io/ze_arcanist95/todo/" + data[i]._id, {completed: true})
+                    .then(res => getApi())
+                    .catch(err => console.log(err));
+            } else {
+                axios.put("https://api.vschool.io/ze_arcanist95/todo/" + data[i]._id, {completed: false})
+                    .then(res => getApi())
+                    .catch(err => console.log(err));
+            }
+        })
         editBtn.innerText = 'Edit';
-        editBtn.setAttribute('onclick', 'editTodo()');
         editBtn.classList.add('edit-button');
-        delBtn.innerText = 'Delete';
-        delBtn.setAttribute('onclick', 'deleteTodo()');
+        editBtn.addEventListener("click", (e) => {
+            // 1. Save current values
+            let currentTitle = data[i].title;
+            let currentDesc = data[i].description;
+
+            // 2. Create input fields
+            const titleInput = document.createElement("input");
+            const descInput = document.createElement("input");
+            titleInput.value = currentTitle;
+            descInput.value = currentDesc;
+            editBtn.innerText = 'Save';
+        
+            // 3. Replace current content with inputs
+            itemTitle.append(titleInput);
+            itemDesc.append(descInput);
+
+            const editedTodo = {
+                title: titleInput.value,
+                description: descInput.value
+            }
+            // 4. Create eventListener for Save to apply changes
+            editBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                axios.put("https://api.vschool.io/ze_arcanist95/todo/" + data[i]._id, editedTodo)
+                    .then(res => getApi())
+                    .catch(err => console.log(err));
+
+                editBtn.innerText = 'Edit';
+            })
+        })
         delBtn.classList.add('delete-button');
-
-
+        delBtn.innerText = 'Delete';
+        delBtn.addEventListener("click", (e) => {
+            axios.delete("https://api.vschool.io/ze_arcanist95/todo/" + data[i]._id)
+            .then(res => getApi())
+            .catch(err => console.log(err));
+        })
+        
         if (itemImg.src === "") {
             itemImg.style.display = "none";
         }
-
+        
         docFragment.appendChild(itemContainer);
         itemContainer.append(itemTitle, itemDesc, itemImg,checkBox, editBtn, delBtn);
         listContainer.appendChild(itemContainer);
     }
+    
 }
 
 // Event Handlers
@@ -71,12 +123,4 @@ todoForm.addEventListener("submit", (e) => {
         .then(res => getApi())
         .catch(err => console.log(err));
 })
-function editTodo(object) {
-
-} 
-function deleteTodo(object) {
-    axios.delete("https://api.vschool.io/ze_arcanist95/todo/" + object._id)
-        .then(res => getApi())
-        .catch(err => console.log(err));
-}
 getApi();
