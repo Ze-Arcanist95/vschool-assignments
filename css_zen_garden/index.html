@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href='styles.css'>
+    <script src="https://kit.fontawesome.com/f0a87875f4.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -34,7 +35,7 @@
             <h3>Participation</h3>
             <p>Strong visual design has always been our focus. You are modifying this page, so strong <abbr title="Cascading Style Sheets">CSS</abbr> skills are necessary too, but the example files are commented well enough that even CSS novices can use them as starting points. Please see the <abbr title="Cascading Style Sheets">CSS</abbr> Resource Guide for advanced tutorials and tips on working with <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
             <p>You may modify the style sheet in any way you wish, but not the <abbr title="HyperText Markup Language">HTML</abbr>. This may seem daunting at first if you’ve never worked this way before, but follow the listed links to learn more, and use the sample files as a guide.</p>
-            <p>Download the sample <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> to work on a copy locally. Once you have completed your masterpiece (and please, don’t submit half-finished work) upload your <abbr title="Cascading Style Sheets">CSS</abbr> file to a web server under your control. Send us a link to an archive of that file and all associated assets, and if we choose to use it we will download it and place it on our server.</p>
+            <p>Download the sample <a href="www.csszengarden.com/examples/index" title="This page's source HTML code, not to be modified.">HTML</a> and <a href="www.csszengarden.com/examples/style.css" title="This page's sample CSS, the file you may modify.">CSS</a> to work on a copy locally. Once you have completed your masterpiece (and please, don’t submit half-finished work) upload your <abbr title="Cascading Style Sheets">CSS</abbr> file to a web server under your control. Send us a link to an archive of that file and all associated assets, and if we choose to use it we will download it and place it on our server.</p>
             <h3>Benefits</h3>
             <p>Why participate? For recognition, inspiration, and a resource we can all refer to showing people how amazing <abbr title="Cascading Style Sheets">CSS</abbr> really can be. This site serves as equal parts inspiration for those working on the web today, learning tool for those who will be tomorrow, and gallery of future techniques we can all look forward to.</p>
         </div>
@@ -47,91 +48,104 @@
         </div>
     </main>
     <footer>
-        <div>
+        <div class="site-info">
             <h2>By <a href="http://www.mezzoblue.com/">Dave Shea</a>. Bandwidth graciously donated by <a href="http://www.mediatemple.net/">mediatemple</a>. Now available: <a href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/">Zen Garden, the book</a>.</h2>
         </div>
-        <div>
+        <div class="icons">
             <ul>
                 <li>
-                    <a href="http://validator.w3.org/check/referer" title="Check the validity of this site’s HTML" class="zen-validate-html">HTML</a>
+                    <i class="fab fa-html5 fa-3x">
+                        <a href="http://validator.w3.org/check/referer" title="Check the validity of this site’s HTML" class="zen-validate-html"></a>
+                    </i>
                 </li>
                 <li>
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site’s CSS" class="zen-validate-css">CSS</a>
+                    <i class="fab fa-css3 fa-3x">
+                        <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site’s CSS" class="zen-validate-css"></a>
+                    </i>
                 </li>
                 <li>
-                    <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike." class="zen-license">CC</a>
+                    <i class="fab fa-creative-commons fa-3x">
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike." class="zen-license"></a>
+                    </i>
                 </li>
                 <li>
-                    <a href="http://mezzoblue.com/zengarden/faq/#aaa" title="Read about the accessibility of this site" class="zen-accessibility">A11y</a>
+                    <i class="fab fa-accessible-icon fa-3x">
+                        <a href="http://mezzoblue.com/zengarden/faq/#aaa" title="Read about the accessibility of this site" class="zen-accessibility"></a>
+                    </i>
                 </li>
                 <li>
-                    <a href="https://github.com/mezzoblue/csszengarden.com" title="Fork this site on Github" class="zen-github">GH</a>
+                    <i class="fab fa-github fa-3x">
+                        <a href="https://github.com/mezzoblue/csszengarden.com" title="Fork this site on Github" class="zen-github"></a>
+                    </i>
                 </li>
             </ul>
         </div>
     </footer>
     <aside>
-        <div class="Authors">
+        <div class="authors">
             <ul>
                 <li>
-                    <h4><a href="www.csszengarden.com/221/">Mid Century Modern</a></h4>
-                    <span class="possessive">By</span>
-                    <span class="name"><a href="http://andrewlohman.com">Andrew Lohman</a></span>
+                    <a class="style-title" href="www.csszengarden.com/221/">Mid Century Modern</a>
+                    <br>
+                    By <a class="style-author" href="http://andrewlohman.com">Andrew Lohman</a>
                 </li>
                 <li>
-                    <h4><a href="www.csszengarden.com/220/">Garments</a></h4>
-                    <span class="possessive">By</span>
-                    <span class="name"><a href="http://danielmall.com">Dan Mall</a></span>
+                    <a class="style-title" href="www.csszengarden.com/220/">Garments</a>
+                    <br>
+                    By <a class="style-author" href="http://danielmall.com">Dan Mall</a>
                 </li>
                 <li>
-                    <h4><a href="www.csszengarden.com/219/">Steel</a></h4>
-                    <span class="possessive">By</span>
-                    <span class="name"><a href="http://steffen-knoeller.de">Steffen Knoeller</a></span>
+                    <a class="style-title" href="www.csszengarden.com/219/">Steel</a>
+                    <br>
+                    By <a class="style-author" href="http://steffen-knoeller.de">Steffen Knoeller</a>
                 </li>
                 <li>
-                    <h4><a href="www.csszengarden.com/218/">Apothecary</a></h4>
-                    <span class="possessive">By</span>
-                    <span class="name"><a href="http://trentwalton.com">Trent Walton</a></span>
+                    <a class="style-title" href="www.csszengarden.com/218/">Apothecary</a>
+                    <br>
+                    By <a class="style-author" href="http://trentwalton.com">Trent Walton</a>
                 </li>
                 <li>
-                    <h4><a href="www.csszengarden.com/217/">Screen Filler</a></h4>
-                    <span class="possessive">By</span>
-                    <span class="name"><a href="http://elliotjaystocks.com">Elliot Jay Stocks</a></span>
+                    <a class="style-title" href="www.csszengarden.com/217/">Screen Filler</a>
+                    <br>
+                    By <a class="style-author" href="http://elliotjaystocks.com">Elliot Jay Stocks</a>
                 </li>
                 <li>
-                    <h4><a href="www.csszengarden.com/216/">Fountain Kiss</a></h4>
-                    <p class="name">By <a href="http://jeremycarlson.com">Jeremy Carlson</a></p>
+                    <a class="style-title" href="www.csszengarden.com/216/">Fountain Kiss</a>
+                    <br>
+                    By <a class="style-author" href="http://jeremycarlson.com">Jeremy Carlson</a>
                 </li>
                 <li>
-                    <h4><a href="www.csszengarden.com/215/">A Robot Named Jimmy</a></h4>
-                    <span class="name">By <a href="http://meltmedia.com">meltmedia</a></p>
+                    <a class="style-title" href="www.csszengarden.com/215/">A Robot Named Jimmy</a>
+                    <br>
+                    By <a class="style-author" href="http://meltmedia.com">meltmedia</a>
                 </li>
                 <li>
-                    <h4><a href="www.csszengarden.com/214/">Verde Moderna</a></h4>
-                    <span class="possessive">By</span>
-                    <span class="name"><a href="http://www.mezzoblue.com">Dave Shea</a></span>
+                    <a class="style-title" href="www.csszengarden.com/214/">Verde Moderna</a>
+                    <br>
+                    By <a class="style-author" href="http://www.mezzoblue.com">Dave Shea</a>
                 </li>
             </ul>
         </div>
         <div class="links">
             <ul>
                 <li>
-                    <a href="/214/214.css" title="View the source CSS file of the currently-viewed design.">View This Design’s <abbr title="Cascading Style Sheets">CSS</abbr></a>
+                    <a class="resource" href="/214/214.css" title="View the source CSS file of the currently-viewed design.">View This Design’s <abbr title="Cascading Style Sheets">CSS</abbr></a>
                 </li>
                 <li>
-                    <a href="http://www.mezzoblue.com/zengarden/resources/" title="Links to great sites with information on using CSS."><abbr title="Cascading Style Sheets">CSS</abbr> Resources</a>
+                    <a class="resource" href="http://www.mezzoblue.com/zengarden/resources/" title="Links to great sites with information on using CSS."><abbr title="Cascading Style Sheets">CSS</abbr> Resources</a>
                 </li>
                 <li>
-                    <a href="http://www.mezzoblue.com/zengarden/faq/" title="A list of Frequently Asked Questions about the Zen Garden."><abbr title="Frequently Asked Questions">FAQ</abbr></a>
+                    <a class="resource" href="http://www.mezzoblue.com/zengarden/faq/" title="A list of Frequently Asked Questions about the Zen Garden."><abbr title="Frequently Asked Questions">FAQ</abbr></a>
                 </li>
                 <li>
-                    <a href="http://www.mezzoblue.com/zengarden/submit/" title="Send in your own CSS file.">Submit a Design</a>
+                    <a class="resource" href="http://www.mezzoblue.com/zengarden/submit/" title="Send in your own CSS file.">Submit a Design</a>
                 </li>
                 <li>
-                    <a href="http://www.mezzoblue.com/zengarden/translations/" title="View translated versions of this page.">Translations</a>
+                    <a class="resource" href="http://www.mezzoblue.com/zengarden/translations/" title="View translated versions of this page.">Translations</a>
                 </li>
             </ul>
         </div>
+        <div class="filler"></div>
     </aside>
 </body>
 </html>

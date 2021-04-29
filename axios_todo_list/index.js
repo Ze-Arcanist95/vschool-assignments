@@ -56,35 +56,34 @@ function displayData(data){
         editBtn.innerText = 'Edit';
         editBtn.classList.add('edit-button');
         editBtn.addEventListener("click", (e) => {
-            // 1. Save current values
-            let currentTitle = data[i].title;
-            let currentDesc = data[i].description;
-
-            // 2. Create input fields
-            const titleInput = document.createElement("input");
-            const descInput = document.createElement("input");
-            titleInput.value = currentTitle;
-            descInput.value = currentDesc;
-            editBtn.innerText = 'Save';
-        
-            // 3. Replace current content with inputs
-            itemTitle.append(titleInput);
-            itemDesc.append(descInput);
-
-            const editedTodo = {
-                title: titleInput.value,
-                description: descInput.value
-            }
-            // 4. Create eventListener for Save to apply changes
-            editBtn.addEventListener("click", (e) => {
-                e.preventDefault();
-
+            
+            if (editBtn.innerText === 'Edit') {
+                // 1. Save current values
+                let currentTitle = data[i].title;
+                let currentDesc = data[i].description;
+                editBtn.innerText = 'Save';
+                
+                // 2. Create input fields
+                const titleInput = document.createElement("input");
+                const descInput = document.createElement("input");
+                titleInput.value = currentTitle;
+                descInput.value = currentDesc;
+            
+                // 3. Replace current content with inputs
+                itemTitle.append(titleInput);
+                itemDesc.append(descInput);
+    
+                const editedTodo = {
+                    title: titleInput.value,
+                    description: descInput.value
+                }
+            } else if (editBtn.innerText === 'Save') {
                 axios.put("https://api.vschool.io/ze_arcanist95/todo/" + data[i]._id, editedTodo)
                     .then(res => getApi())
                     .catch(err => console.log(err));
-
+    
                 editBtn.innerText = 'Edit';
-            })
+            }
         })
         delBtn.classList.add('delete-button');
         delBtn.innerText = 'Delete';
