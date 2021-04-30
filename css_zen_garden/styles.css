@@ -205,6 +205,15 @@ i {
 }
 .resource {
     display: block;
+    text-decoration: none;
+    color: rgb(96, 116, 118);
+    font-size: 19px;
+    font-style: normal;
+}
+.filler {
+    display: block;
+    background-color: #E5EDE8;
+    height: 880px;
 }
 .site-info {
     display: block;
