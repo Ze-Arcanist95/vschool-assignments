@@ -57,6 +57,13 @@ function displayData(data){
         editBtn.classList.add('edit-button');
         editBtn.addEventListener("click", (e) => {
             
+            const editedTodo = {
+                title: "",
+                description: ""
+            }
+            const titleInput = document.createElement("input");
+            const descInput = document.createElement("input");
+
             if (editBtn.innerText === 'Edit') {
                 // 1. Save current values
                 let currentTitle = data[i].title;
@@ -64,8 +71,6 @@ function displayData(data){
                 editBtn.innerText = 'Save';
                 
                 // 2. Create input fields
-                const titleInput = document.createElement("input");
-                const descInput = document.createElement("input");
                 titleInput.value = currentTitle;
                 descInput.value = currentDesc;
             
@@ -73,10 +78,6 @@ function displayData(data){
                 itemTitle.append(titleInput);
                 itemDesc.append(descInput);
     
-                const editedTodo = {
-                    title: titleInput.value,
-                    description: descInput.value
-                }
             } else if (editBtn.innerText === 'Save') {
                 axios.put("https://api.vschool.io/ze_arcanist95/todo/" + data[i]._id, editedTodo)
                     .then(res => getApi())
