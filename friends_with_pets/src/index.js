@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App"
+import FriendList from "./components/FriendList";
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
+ReactDOM.render(<FriendList />, document.getElementById("root"));
