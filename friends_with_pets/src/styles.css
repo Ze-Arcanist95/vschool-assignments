@@ -1,3 +1,15 @@
-.friend {
+.friendList-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.friend-container {
+    display: block;
+    background-color: burlywood;
     border: 2.5px solid black;
+}
+.pet-container {
+    display: block;
+    background-color: chocolate;
+    border: 1px solid black;
 }

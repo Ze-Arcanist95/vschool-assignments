@@ -4,10 +4,9 @@ import Friend from "./Friend";
 
 function FriendList() {
     const friendList = Information.map(index => <Friend key={index.name} info={index} />);
-    console.log(friendList)
 
     return (
-        <div>
+        <div className="friendList-container">
             {friendList}
         </div>
     )
