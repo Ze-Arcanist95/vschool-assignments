@@ -1,7 +1,5 @@
 import React from "react";
 import Square from "./Square";
-import "./App.css";
-
 
 class App extends React.Component {
     constructor() {
@@ -69,14 +67,23 @@ class App extends React.Component {
     };
     
     render() {
-        const colorGrid = this.state.color.map(currColor => <Square key={() => this.shuffle(currColor)} color={currColor} />);
+        const colorGrid = this.state.color.map((currColor, index) => <Square key={() => this.shuffle(currColor)} index={index} color={currColor} />);
         
         return (
             <div>
-                <div className="grid-container">
+                <div style={{
+                    display: "grid",
+                    margin: "auto",
+                    gridTemplateColumns: "repeat(2, 50%)"
+
+                }}>
                     {colorGrid}
                 </div>
-                <div className="button-container">
+                <div style={{
+                    display: "grid",
+                    margin: "auto",
+                    gridTemplateColumns: "repeat(2, 1fr)"
+                }}>
                     <button onClick={() => {
                     this.colorChange(1)
                     return this.playSound()
